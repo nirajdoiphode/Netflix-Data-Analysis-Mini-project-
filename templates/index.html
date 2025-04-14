@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Netflix Ratings</title>
+    <link rel="stylesheet" href="IndexCSS.css">
+    <style>
+        @font-face {
+    font-family: 'Netflix'; /* Give your font a name */
+    src: url('fonts/BebasNeue.otf') format('opentype'); /* Adjust path if needed */
+    font-weight: normal;
+    font-style: normal;
+}
+.btn
+{
+    margin: 7px;
+   width: 450px;
+   font-family: 'Times New Roman';
+   font-size: 20px;
+   border-radius: 9px;
+   background-color:white;
+   transition: background-color 1s ease, transform 0.3s ease;
+}
+
+.btn:hover
+{
+
+    width: 455px;
+    height: 50px;
+    background-color: rgb(228, 52, 52);
+    color: white;
+    font-weight: bold;
+    transform: scale(1.05);
+
+
+}
+    </style>
+    <script>
+        function showPieChart()
+        {
+            fetch('/show_chart')
+                .then(response => response.json())
+                .then(data => console.log(data.message))
+                .catch(error => console.error('Error:', error));
+                alert("Displaying...");
+        }
+
+        function showTopDirectors()
+        {
+            fetch('/show_directors')
+                .then(response => response.json())
+                .then(data => console.log(data.message))
+                .catch(error => console.error('Error:', error));
+                alert("chart displayed..");
+        }
+         function showTopActors()
+        {
+            fetch('/show_actors')
+                .then(response => response.json())
+                .then(data => console.log(data.message))
+                .catch(error => console.error('Error:', error));
+                alert("Displaying...");
+        }
+        function showTrendingContent()
+        {
+            fetch('/show_trendcontent')
+                .then(response => response.json())
+                .then(data => console.log(data.message))
+                .catch(error => console.error('Error:', error));
+                alert("Displaying...");
+        }
+
+        function showSContent()
+        {
+            fetch('/show_scontent')
+                .then(response => response.json())
+                .then(data => console.log(data.message))
+                .catch(error => console.error('Error:', error));
+                alert("Displaying...");
+                alert("Loading... Please Wait");
+        }
+
+    </script>
+</head>
+<body style="background-color: rgb(26, 24, 24);">
+    <h2><p align="center" style="color: red; font-size: 70px; font-family: 'Netflix' ; text-transform: uppercase;" >Netflix  Data Analysis</p></h2>
+
+    <div align="center">
+        <button class="btn" onclick="showPieChart()">Distribution of Content Ratings on Netflix</button> <br>
+        <button class="btn" onclick="showTopDirectors()">Top 5 Directors</button><br>
+        <button class="btn" onclick="showTopActors()">Top 5 Actors</button><br>
+        <button class="btn" onclick="showTrendingContent()">Trending Content on Netflix</button><br>
+        <button class="btn" onclick="showSContent()">Sentiment of Content on Netflix</button><br>
+        <br>
+    </div>
+       
+
+
+</body>
+</html>

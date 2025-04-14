@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Netflix'; /* Give your font a name */
+    src: url('fonts/BebasNeue.otf') format('opentype'); /* Adjust path if needed */
+    font-weight: normal;
+    font-style: normal;
+}
+.btn
+{
+    margin: 7px;
+   width: 450px;
+   font-family: 'Times New Roman';
+   font-size: 20px;
+   border-radius: 9px;
+   transition: background-color 1s ease, transform 0.3s ease;
+}
+
+.btn:hover
+{
+    
+    width: 455px;
+    height: 50px;
+    background-color: rgb(228, 52, 52);
+    color: white;
+    font-weight: bold;
+    transform: scale(1.05);
+    
+
+}
